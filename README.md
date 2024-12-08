@@ -20,7 +20,7 @@ This repo and `README` provides the code and information for how to create your 
 	-githubname "your-github-user-name"
 ```
 
-  * `R`: you can use `create_projects()` directly in R on Osiris
+  * `R`: you can use `create_project()` directly in `R` on Osiris
 ```
 source("/data/IARCBiostat/create_project/create_project.R")
 create_project(
@@ -29,7 +29,7 @@ create_project(
   githubname = "your-github-user-name")
 ```
 
-  * `python`: you can use `create_project` in python on Osiris
+  * `python`: you can use `create_project()` directly in `python` or a notebook on Osiris
 ```
 sys.path.append('/data/IARCBiostat/create_project/create_project')
 from create_project import create_project
