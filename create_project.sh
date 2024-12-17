@@ -4,79 +4,47 @@ source ./src/bash/argparse.sh
 
 set_description "This script helps you setup the empty structure of your project."
 
-define_arg "location" "" "Path to wher you want to setup your project. For example: /home/doej/Documents/projects/" "string"
-define_arg "project_name" "my_project" "The name of your project. Should be the same as the one on your Git server." "string"
+define_arg "location" "" "Path to where you want to setup your project. For example: /home/doej/Documents/projects/" "string"
+define_arg "project_name" "" "The name of your project. Should be the same as the one on your Git server." "string" "true"
 
-# Validate required arguments
-if [[ -z "$location" || -z "$project_name" ]]; then
-    echo "Usage: create_project -location <location> -project <project_name> -githubname <github_name>"
+check_for_help "$@"
+# Parse the arguments
+parse_args "$@"
+
+projec_dir="$location/$project_name"
+# Navigate to the base location
+if [ ! -d "$location" ]; then
+    echo "Could not find '$location'. Please check the location and try again."
     exit 2
 fi
 
-# Navigate to the base location
-cd "$location" || {
-    echo "Failed to navigate to $location"
+if [ -d "$projec_dir" ]; then
+    echo "$projec_dir already exists. Please select a different project name, or  a different location."
     exit 3
-}
-
-
-if [ -d "$project_name" ]; then
-  echo "$project_name already exists. Please select a different project name, or  a different location."
-  exit 4
 fi
 
 # Create project directory
-mkdir "$project_name"
-cd "$project_name"
+mkdir $projec_dir
 
 # Create directories
-mkdir -p docs
-mkdir -p manuscript/extended_data manuscript/tables manuscript/figures manuscript/submissions/
-mkdir -p data/raw data/processed
-touch data/README.md
-mkdir -p analysis/tables analysis/figures analysis/001_ analysis/002_ analysis/003_
-mkdir -p src/tables src/figures src/001_ src/002_ src/003_
+mkdir -p $projec_dir/docs
+mkdir -p $projec_dir/manuscript/extended_data
+mkdir -p $projec_dir/manuscript/tables
+mkdir -p $projec_dir/manuscript/figures
+mkdir -p $projec_dir/manuscript/submissions/
+mkdir -p $projec_dir/data/raw
+mkdir -p $projec_dir/data/processed
+mkdir -p $projec_dir/analysis/tables
+mkdir -p $projec_dir/analysis/figures
+mkdir -p $projec_dir/analysis/001_
+mkdir -p $projec_dir/analysis/002_
+mkdir -p $projec_dir/analysis/003_
+mkdir -p $projec_dir/src/tables
+mkdir -p $projec_dir/src/figures
+mkdir -p $projec_dir/src/001_
+mkdir -p $projec_dir/src/002_
+mkdir -p $projec_dir/src/003_
+touch $projec_dir/data/README.md
+echo "# $project_name" >$projec_dir/README.md
 
-# Create .gitignore
-cat <<EOL >.gitignore
-*.csv
-*.tsv
-*.dta
-*.txt
-*.dat
-*.[rR]data
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
-*.Rproj
-*.Rmd
-*.bgen
-*.gen
-out*
-error*
-j*.sh.e*
-j*.sh.o*
-*.sh.e*
-*.sh.o*
-slurm*
-*.enc_ukb
-*.enc
-*.cwa
-data
-EOL
-
-# Create README.md
-echo "# $project_name" >README.md
-
-# Initialize Git repository and commit
-# git init
-# git add README.md .gitignore src/
-# git commit -m "first commit"
-# git branch -M main
-
-# Configure GitHub remote if username is provided
-# if [[ -n "$github_name" ]]; then
-#     git remote add origin "https://github.com/$github_name/$project_name.git"
-#     git push -u origin main || echo "Warning: Failed to push to the GitHub repository. Please ensure the repository exists."
-# fi
+cp src/gitignore_template $projec_dir/.gitignore
