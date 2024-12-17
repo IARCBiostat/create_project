@@ -70,10 +70,10 @@ EOL
 echo "# $project_name" >README.md
 
 # Initialize Git repository and commit
-git init
-git add README.md .gitignore src/
-git commit -m "first commit"
-git branch -M main
+# git init
+# git add README.md .gitignore src/
+# git commit -m "first commit"
+# git branch -M main
 
 # Configure GitHub remote if username is provided
 # if [[ -n "$github_name" ]]; then
