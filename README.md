@@ -1,43 +1,37 @@
 # create_project
 
-## What
 This repo and `README` provides the code and information for how to create your standardised repository.
 
 ## How
-1. Make an empty Git repository on servers such as IARC's [internal](git.iarc.lan) or [external](code.iarc.fr) or any commercial Git server like [GitLab.com](gitlab.com) or [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories)
-  * you only need to make the repository, you do not need to populate it.
-  * please make sure the name of your Git repository is the same as your project name.
-2. use any of the different implamentation of the `create_project` function to create your project directory and initialise it. 
-  * you must provide 3 arguments:
-    * `location`: where you want to make the project.
-    * `project`: the name of the project; this must be the same as the Git repository name.
-    * `git_username`: your user name on the Git server.
+Use any of the different implamentation of the `create_project` function to create your project directory and initialise it. 
   
-  ## Example:
-
-  You would like to initilise a project on Osiris in your "Documents" folder and your username is doej. Suppose that you are running create_project from a location other than your Documents folder, so you need to provide the full project path to the `location` argument:
-```bash
-/home/doej/Documents/
-```
-and the name of you project is "foo_project" which will be the input of `project`.
-You are also using the IARC's internal Git server so your `git_username` is your IARC username, "doej".
-
-You can use one of the following implementations to create your project directory. 
+you must provide 2 arguments:  
+  * `location`: where you want to make the project.
+  * `project`: the name of the project; this must be the same as the Git repository name.
   
-  ### bash
-  You can use `create_project` directly on the command line on Osiris:
+## Example:
+
+1- You have downloaded (or cloned) this project with all its folders and subfolder on your local machine.
+
+2- You would like to initilise a project on Osiris in your "Documents" folder and your username is doej, so you the path to your project will be `/home/doej/Documents/`.
+
+3- The name of your project is `foo_project`.
+
+4- You choose one of the following implementations to create your project directory.
+  
+### bash
+On a terminal, navigate to where this README is located and run `create_project.sh` with the following options:
 ```bash
-create_project.sh --location "/home/doej/Documents/" --project "super_project" --git_username "doej"
+bash create_project.sh --location "/home/doej/Documents/" --project_name "foo_project"
 ```
 
-  ### R 
-  you can use `create_project()` directly in `R` on Osiris
+### R 
+you can use `create_project()` directly in `R` on Osiris
 ```R
 source("/data/IARCBiostat/create_project/create_project.R")
 create_project(
   location = "your/file/path/",
-  project = "your-project-name",
-  githubname = "your-github-user-name")
+  project = "your-project-name")
 ```
 
   ### python 
@@ -47,12 +41,11 @@ sys.path.append('/data/IARCBiostat/create_project/create_project')
 from create_project import create_project
 create_project(
   location = "your/file/path/",
-  project = "your-project-name",
-  githubname = "your-github-user-name")
+  project = "your-project-name")
   
 ```
 
-3. guidelines:
+## General guidelines:
   * use capitals sparingly
   * use `-` to combine; e.g., colon-caner
   * use `_` to separate; e.g., EPIC_colon-cancer
