@@ -22,7 +22,7 @@ you must provide 2 arguments:
 ### bash
 On a terminal, navigate to where this README is located and run `create_project.sh` with the following options:
 ```bash
-bash "/data/IARCBiostat/work/create_project/create_project.sh" --location "your/file/path/" --project "your-project-name"
+"/data/IARCBiostat/work/create_project/create_project.sh" --location "your/file/path/" --project "your-project-name"
 ```
 
 ### R 
@@ -36,7 +36,7 @@ create_project(
 
 ### python 
 you can use `create_project()` directly in `python` or a notebook on Osiris
-```
+```python
 import sys
 sys.path.append('/data/IARCBiostat/work/create_project/create_project')
 from create_project import create_project
