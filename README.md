@@ -22,22 +22,23 @@ you must provide 2 arguments:
 ### bash
 On a terminal, navigate to where this README is located and run `create_project.sh` with the following options:
 ```bash
-bash create_project.sh --location "/home/doej/Documents/" --project_name "foo_project"
+bash "/data/IARCBiostat/work/create_project/create_project.sh" --location "your/file/path/" --project "your-project-name"
 ```
 
 ### R 
 you can use `create_project()` directly in `R` on Osiris
 ```R
-source("/data/IARCBiostat/create_project/create_project.R")
+source("/data/IARCBiostat/work/create_project/create_project.R")
 create_project(
   location = "your/file/path/",
   project = "your-project-name")
 ```
 
-  ### python 
-  you can use `create_project()` directly in `python` or a notebook on Osiris
+### python 
+you can use `create_project()` directly in `python` or a notebook on Osiris
 ```
-sys.path.append('/data/IARCBiostat/create_project/create_project')
+import sys
+sys.path.append('/data/IARCBiostat/work/create_project/create_project')
 from create_project import create_project
 create_project(
   location = "your/file/path/",
