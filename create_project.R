@@ -26,10 +26,13 @@
 #'                project = "my-new-project")
 #'
 create_project <- function(location, project, githubname = NULL) {
-  # Construct the command
+  # Explicitly define the path to the create_project.sh script
+  script_path <- "/Users/leem/OneDrive - International Agency for Research on Cancer/001_projects/IARCBiostat/create_project/create_project.sh"
+  
+  # Construct the command with the explicit script path
   cmd <- sprintf(
-    '/data/IARCBiostat/create_project/create_project.sh -location "%s" -project "%s"',
-    location, project
+    '"%s" --location "%s" --project "%s"',
+    script_path, location, project
   )
   
   # Add the GitHub username if provided
