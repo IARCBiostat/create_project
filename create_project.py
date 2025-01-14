@@ -33,9 +33,9 @@ def create_project(location, project, githubname=None):
     """
     # Base command
     command = [
-        "/data/IARCBiostat/create_project/create_project.sh",
-        "-location", location,
-        "-project", project
+        "/Users/leem/OneDrive - International Agency for Research on Cancer/001_projects/IARCBiostat/create_project/create_project.sh",
+        "--location", location,
+        "--project", project
     ]
     
     # Add GitHub username if provided
