@@ -20,13 +20,15 @@ you must provide 2 arguments:
 4- You choose one of the following implementations to create your project directory.
   
 ### bash
-On a terminal, navigate to where this README is located and run `create_project.sh` with the following options:
+you can use a terminal and run `create_project.sh` directly on Osiris:
 ```bash
-"/data/IARCBiostat/work/create_project/create_project.sh" --location "your/file/path/" --project "your-project-name"
+"/data/IARCBiostat/work/create_project/create_project.sh" \
+--location "your/file/path/" \
+--project "your-project-name"
 ```
 
 ### R 
-you can use `create_project()` directly in `R` on Osiris
+you can use `create_project()` directly in `R` on Osiris:
 ```R
 source("/data/IARCBiostat/work/create_project/create_project.R")
 create_project(
@@ -35,7 +37,7 @@ create_project(
 ```
 
 ### python 
-you can use `create_project()` directly in `python` or a notebook on Osiris
+you can use `create_project()` directly in `python` or a notebook on Osiris:
 ```python
 import sys
 sys.path.append('/data/IARCBiostat/work/create_project/create_project')
@@ -48,6 +50,7 @@ create_project(
 
 ## General guidelines:
   * use capitals sparingly
-  * use `-` to combine; e.g., colon-caner
-  * use `_` to separate; e.g., EPIC_colon-cancer
+  * avoid spaces and instead:
+    * use `-` to combine; e.g., colon-caner
+    * use `_` to separate; e.g., EPIC_colon-cancer
 
