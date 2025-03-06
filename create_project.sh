@@ -6,7 +6,7 @@ source "${DIR_source}bash/argparse.sh"
 set_description "This script helps you setup the empty structure of your project."
 
 define_arg "location" "" "Path to where you want to setup your project. For example: /home/doej/Documents/projects/" "string"
-define_arg "project" "" "The name of your project. Should be the same as the one on your Git server." "string" "true"
+define_arg "project" "" "The name of your project." "string" "true"
 
 check_for_help "$@"
 # Parse the arguments
