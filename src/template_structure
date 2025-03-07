@@ -1,17 +1,13 @@
-/README.md
 /data/
-/data/README.md
 /data/raw/
 /data/processed/
 /analysis/
-/analysis/README.md
 /analysis/tables/
 /analysis/figures/
 /analysis/001_/
 /analysis/002_/
 /analysis/003_/
 /src/
-/src/README.md
 /src/tables/
 /src/figures/
 /src/001_/
@@ -21,8 +17,6 @@
 /src/000_manuscript/tables/
 /src/000_manuscript/figures/
 /manuscript/
-/manuscript/README.md
-/manuscript/extended_data/
 /manuscript/tables/
 /manuscript/figures/
 /manuscript/submissions/
