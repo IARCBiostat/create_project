@@ -23,15 +23,15 @@ you must provide 2 arguments:
 ### R 
 you can use `create_project()` directly in `R` on Osiris
 ```R
-source("/data/IARCBiostat/create_project/create_project.R")
+source("/data/IARCBiostat/work/create_project/create_project.R")
 create_project(
   location = "/home/doej/Documents/",
   project = "foo_project")
 ```
 ### bash
-On a terminal, navigate to where this project is located (either a local copy or the copy on OSIRS: `/data/IARCBiostat/create_project/`). Run `create_project.sh` with the following options:
+On a terminal, navigate to where this project is located (either a local copy or the copy on OSIRS: `/data/IARCBiostat/work/create_project/`). Run `create_project.sh` with the following options:
 ```bash
-cd /data/IARCBiostat/create_project/
+cd /data/IARCBiostat/work/create_project/
 bash create_project.sh --location "/home/doej/Documents/" --project_name "foo_project"
 ```
 
