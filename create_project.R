@@ -35,5 +35,6 @@ create_project <- function(location, project, create_project_path = "/data/IARC_
   file.copy(file.path(create_project_path, "src", "template_README_data.md"), file.path(project_path, "data/README.md"),overwrite = FALSE)
   file.copy(file.path(create_project_path, "src", "template_README_manuscript.md"), file.path(project_path, "manuscript/README.md"),overwrite = FALSE)
   file.copy(file.path(create_project_path, "src", "template_README_src.md"), file.path(project_path, "src/README.md"),overwrite = FALSE)
+  file.copy(file.path(create_project_path, "src", "template_README_review.md"), file.path(project_path, "code_review/README.md"),overwrite = FALSE)
   print("Project template generated.")
 }
