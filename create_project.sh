@@ -35,6 +35,8 @@ while IFS= read -r line || [ -n "$line" ]; do
     fi
 done < "$structure_file"
 
+chmod 777 "${project_dir}/code_review"
+
 cp "${DIR_source}/template_README_main.md" "${project_dir}/README.md";
 cp "${DIR_source}/template_README_analysis.md" "${project_dir}/analysis/README.md";
 cp "${DIR_source}/template_README_data.md" "${project_dir}/data/README.md";

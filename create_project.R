@@ -28,6 +28,9 @@ create_project <- function(location, project, create_project_path = "/data/IARC_
     }
   }
 
+  code_review_folder_path <- file.path(project_path, "code_review") 
+  system(paste("chmod 777", code_review_folder_path))
+
   file.copy(file.path(create_project_path, "src", "template_README_main.md"), file.path(project_path, "README.md"),overwrite = FALSE)
   file.copy(file.path(create_project_path, "src", "template_README_data.md"), file.path(project_path, "data/README.md"),overwrite = FALSE)
   file.copy(file.path(create_project_path, "src", "template_README_manuscript.md"), file.path(project_path, "manuscript/README.md"),overwrite = FALSE)
