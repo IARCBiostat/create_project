@@ -38,11 +38,12 @@ done < "$structure_file"
 chmod 777 "${project_dir}/code_review"
 
 cp "${DIR_source}/template_README_main.md" "${project_dir}/README.md";
-cp "${DIR_source}/template_README_analysis.md" "${project_dir}/analysis/README.md";
-cp "${DIR_source}/template_README_data.md" "${project_dir}/data/README.md";
-cp "${DIR_source}/template_README_manuscript.md" "${project_dir}/manuscript/README.md";
-cp "${DIR_source}/template_README_src.md" "${project_dir}/src/README.md";
-cp "${DIR_source}/template_README_review.md" "${project_dir}/code_review/README.md";
+# cp "${DIR_source}/template_README_analysis.md" "${project_dir}/analysis/README.md";
+# cp "${DIR_source}/template_README_data.md" "${project_dir}/data/README.md";
+# cp "${DIR_source}/template_README_manuscript.md" "${project_dir}/manuscript/README.md";
+# cp "${DIR_source}/template_README_src.md" "${project_dir}/src/README.md";
 
 # gitignore
 cp "${DIR_source}/template_gitignore" "$project_dir/.gitignore"
+
+echo "Project template generated."
